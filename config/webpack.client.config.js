@@ -1,0 +1,25 @@
+/**
+ * webpack dev配置
+ * Created by zdliu on 2018/7/6.
+ */
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const path = require('path')
+const base = require('./webpack.base.config')()
+
+const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
+const config = merge(base, {
+  entry: {
+    app: path.join(process.cwd(), 'client/entry-client.js'),
+  },
+  mode: process.env.NODE_ENV || 'production',
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      'process.env.VUE_ENV': '"client"'
+    }),
+    new VueSSRClientPlugin()
+  ]
+})
+
+module.exports = config
