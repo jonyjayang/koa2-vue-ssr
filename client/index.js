@@ -2,6 +2,7 @@ import '@babel/polyfill'
 import Vue from 'vue'
 import App from './app.vue'
 import { createRouter } from './router'
+
 // vue config配置文件
 import './config'
 // 导出一个工厂函数，用于创建新的

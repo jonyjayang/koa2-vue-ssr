@@ -8,7 +8,7 @@ const proxyConfig = require('./../app.config').proxy
 module.exports = function (app, uri) {
 
   const renderData = (ctx, renderer) => {
-    const context = { url: ctx.url, title: 'Vue Koa2 Render 1.0' }
+    const context = { url: ctx.url, title: 'Vue Koa2 SSR' }
     return new Promise((resolve, reject) => {
       renderer.renderToString(context, (err, html) => {
         if (err) {

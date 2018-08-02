@@ -9,15 +9,19 @@
       <li>123123</li>
       <li>123123</li>
       <li>123123</li>
+      <li>123123</li>
+      <li>123123</li>
+      <li>123123</li>
     </ul>
     {{data}}
   </div>
 </template>
 <script>
   export default {
+    title: '首页',
     data() {
       return {
-        data: ''
+        data: '',
       }
     },
     methods: {

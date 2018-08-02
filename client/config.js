@@ -3,9 +3,13 @@ import Vue from 'vue'
 import http from './../config/http'
 // 引入log日志插件
 import { addRequestInterceptor, addResponseInterceptor } from './../config/http/http'
+import titleMixin from './utils/title'
 
 // 注册插件
 Vue.use(http)
+
+//  title
+Vue.mixin(titleMixin)
 
 // request前自动添加api配置
 addRequestInterceptor(
