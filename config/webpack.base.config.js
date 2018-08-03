@@ -127,7 +127,7 @@ module.exports = function () {
         favicon,
         filename: 'index.html',
         template: path.join(process.cwd(), 'index.template.ejs'),
-        inject: true,
+        inject: !isProd,
       }),
       new FriendlyErrorsPlugin(),
       new vueLoaderPlugin(),
