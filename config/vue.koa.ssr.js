@@ -1,9 +1,10 @@
 const fs = require('fs')
 const path = require('path')
-const setUpDevServer = require('./setup.dev.server')
+const LRU = require('lru-cache')
 const { createBundleRenderer } = require('vue-server-renderer')
 const isProd = process.env.NODE_ENV === 'production'
 const proxyConfig = require('./../app.config').proxy
+const setUpDevServer = require('./setup.dev.server')
 
 module.exports = function (app, uri) {
 
@@ -19,6 +20,17 @@ module.exports = function (app, uri) {
     })
   }
 
+  function createRenderer(bundle, options) {
+    return createBundleRenderer(bundle, Object.assign(options, {
+      cache: LRU({
+        max: 1000,
+        maxAge: 1000 * 60 * 15
+      }),
+      basedir: resolve('dist'),
+      runInNewContext: false
+    }))
+  }
+
   function resolve(dir) {
     return path.resolve(process.cwd(), dir)
   }
@@ -29,7 +41,7 @@ module.exports = function (app, uri) {
     const template = fs.readFileSync(resolve('dist/index.html'), 'utf-8')
     const bundle = require(resolve('dist/vue-ssr-server-bundle.json'))
     const clientManifest = require(resolve('dist/vue-ssr-client-manifest.json'))
-    renderer = createBundleRenderer(bundle, {
+    renderer = createRenderer(bundle, {
       template,
       clientManifest
     })
@@ -37,7 +49,7 @@ module.exports = function (app, uri) {
     // dev mode
     setUpDevServer(app, uri, (bundle, options) => {
         try {
-          renderer = createBundleRenderer(bundle, options)
+          renderer = createRenderer(bundle, options)
         } catch (e) {
           console.log('\nbundle error', e)
         }

@@ -2,13 +2,13 @@
   "publicPath": "/dist/",
   "all": [
     "assets/images/cc.4f48e8a7.jpg",
-    "css/app.4441082b.css",
-    "app.4441082b.js",
+    "css/app.2f04a0f9.css",
+    "app.2f04a0f9.js",
     "favicon.ico",
     "index.html"
   ],
   "initial": [
-    "app.4441082b.js"
+    "app.2f04a0f9.js"
   ],
   "async": [],
   "modules": {

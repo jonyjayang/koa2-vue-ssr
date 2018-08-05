@@ -18,7 +18,6 @@ module.exports = function setupDevServer(app, uri, cb) {
     if (bundle && template) {
       cb(bundle, {
         template,
-        runInNewContext: false
       })
     }
   }
