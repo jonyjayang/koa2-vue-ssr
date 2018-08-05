@@ -1,5 +1,5 @@
 /**
- * Created by liuzhengdong on 2017/9/7.
+ * Created by zdliuccit on 2017/9/7.
  * 错误处理中间件
  * @param {ctx} ctx koa ctx
  * @param {Function} next koa next */

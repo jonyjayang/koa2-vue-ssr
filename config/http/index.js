@@ -1,4 +1,5 @@
 /**
+ * Created by zdliuccit on 2017/9/6.
  * 为vue实例添加http方法
  * Vue.use(http)
  */

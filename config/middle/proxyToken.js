@@ -1,5 +1,5 @@
 /**
- * token处理
+ * proxyMiddleWare中间件token处理
  * @type {string}
  */
 const logger = require('../logger/koa-logger')('proxyToken')

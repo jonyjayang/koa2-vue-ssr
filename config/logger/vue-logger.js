@@ -1,15 +1,15 @@
 /**
- * Created by liuzhengdong on 2017/9/21.
+ * Created by zdliuccit on 2017/9/21.
  * 日志打印器 class
  */
-import { IS_DEBUG } from '../middle/env'
+const IS_DEBUG = process.env.NODE_ENV !== 'production'
 
 class Logger {
   /**
    * 构造函数
    * @param filename 调用的文件名
    */
-  constructor (filename) {
+  constructor(filename) {
     this.filename = filename
   }
 }
@@ -42,7 +42,7 @@ Object.entries(methods).forEach(([method, color]) => {
  * 定义 VueLogger class
  */
 class VueLogger {
-  constructor (filename) {
+  constructor(filename) {
     const logger = new Logger(filename)
     Object.keys(methods).forEach(method => {
       this[method] = (vm, ...args) => {

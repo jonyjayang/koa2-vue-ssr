@@ -1,3 +1,7 @@
+/**
+ * koa2 webpack4 开发服务
+ * Created by zdliuccit on 2018/7/6.
+ */
 const path = require('path')
 const MFS = require('memory-fs')
 const webpack = require('webpack')

@@ -1,5 +1,6 @@
 /**
- * Created by liuzhengdong on 2017/7/13.
+ * koa2 server 入口
+ * Created by zdliuccit on 2018/7/6.
  */
 const Koa = require('koa')
 const koaCompress = require('koa-compress')()

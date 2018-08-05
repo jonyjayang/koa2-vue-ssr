@@ -1,3 +1,7 @@
+/**
+ * vue koa2 ssr中间件
+ * Created by zdliuccit on 2018/7/6.
+ */
 const fs = require('fs')
 const path = require('path')
 const LRU = require('lru-cache')

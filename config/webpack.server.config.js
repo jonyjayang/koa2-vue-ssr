@@ -1,3 +1,7 @@
+/**
+ * webpack server配置
+ * Created by zdliuccit on 2018/7/6.
+ */
 const webpack = require('webpack')
 const path = require('path')
 const merge = require('webpack-merge')
