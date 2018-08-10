@@ -13,7 +13,7 @@ module.exports = merge(config, {
   // 指定生成后的运行环境在node
   target: 'node',
   // 设置代码调试map
-  devtool: '#source-map',
+  devtool: '#cheap-module-source-map',
   mode: 'production',
   // 配置编译的入口文件
   entry: path.join(process.cwd(), 'client/entry-server.js'),

@@ -4,9 +4,11 @@ import http from './../config/http'
 // 引入log日志插件
 import { addRequestInterceptor, addResponseInterceptor } from './../config/http/http'
 import titleMixin from './utils/title'
-
+// 引入log日志插件
+import vueLogger from './../config/logger/vue-logger'
 // 注册插件
 Vue.use(http)
+Vue.use(vueLogger)
 
 //  title
 Vue.mixin(titleMixin)
