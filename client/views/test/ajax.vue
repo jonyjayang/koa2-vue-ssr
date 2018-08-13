@@ -2,7 +2,7 @@
   <div class="demo">
     <p>proxy配置(项目目录constants.js文件中): { '/api': 'http://restapi.amap.com' }</p>
     <p>接口URL: {{requestUrl}}</p>
-    <a @click="sendGet" href="javascript:;">API接口测试</a>
+    <a @click="sendGet" href="javascript:void(0);">API接口测试</a>
     <p>result:{{result}}</p>
   </div>
 </template>

@@ -33,6 +33,9 @@ const actions = {
     }).then(() => {
       commit('INITCOUNT', 67)
     })
+  },
+  resetCount({ commit }) {
+    commit('INITCOUNT', 67)
   }
 }
 

@@ -2,8 +2,9 @@
   <div class="demo">
     <button @click="increment">count +1</button>
     <button @click="decrement">count -1</button>
-    <button @click="loading">重置</button>
+    <button @click="resetCount">重置</button>
     <p>Count is : {{count}}</p>
+    <p>count延迟了1秒赋值</p>
   </div>
 </template>
 <script type="text/babel">
@@ -13,7 +14,7 @@
     title: 'Vuex store数据处理',
     asyncData({ store }) {
       // 触发 action 后，会返回 Promise
-      return store.dispatch('test/loading')
+      return store.dispatch('loading')
     },
     computed: {
       ...mapGetters({
@@ -24,7 +25,7 @@
       ...mapActions([
         'increment',
         'decrement',
-        'loading'
+        'resetCount'
       ])
     }
   }
