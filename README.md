@@ -1,3 +1,10 @@
+# ⛔️ DEPRECATED
+
+<em>**This repo is deprecated and not mainted any more.</em>
+
+<em>**Migrated to [vue-webpack-config下的vue-webpack-config目录](https://github.com/zdliuccit/vue-webpack-config/webpack4-ssr-config)</em>
+
+
 # Webpack4 + Vue2 + Koa2 构建SSR应用
 > 
 安装npm依赖
